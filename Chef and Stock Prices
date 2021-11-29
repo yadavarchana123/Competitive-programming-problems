@@ -1,0 +1,29 @@
+https://www.codechef.com/LTIME102C/problems/CSTOCK
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    float s,a,b,r,res,x;
+	    cin>>s>>a>>b>>r;
+	    if(r<0)
+	    x=-r;
+	    else
+	    x=r;
+	    float cnt=(s*x)/100;
+	    if(r<0)
+	    res=s-cnt;
+	    else
+	    res=s+cnt;
+	    if(res>=a and res<=b)
+	    cout<<"Yes\n";
+	    else
+	    cout<<"No\n";
+	}
+	return 0;
+}
