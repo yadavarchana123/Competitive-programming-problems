@@ -1,0 +1,19 @@
+https://www.codechef.com/FOUR21C/problems/S01E01
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    if(n<21)
+	    cout<<"No\n";
+	    else
+	    cout<<"Yes\n";
+	}
+	return 0;
+}
