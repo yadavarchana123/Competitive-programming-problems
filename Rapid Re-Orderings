@@ -1,0 +1,68 @@
+https://www.codechef.com/LTIME102C/problems/RPDRDNG
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    long long n,y;
+	    vector<long long>v,med,v1;
+	    cin>>n;
+	    long long a[2*n];
+	    for(int i=0;i<2*n;i++)
+	    {
+	        cin>>a[i];
+	    }
+	    for(int i=0;i<2*n;i++)
+	    v1.push_back(a[i]);
+	    set<long long>s(a,a+2*n);
+	    for(auto x:s)
+	    {
+	        v.push_back(x);
+	    }
+	    for(int i=v.size()-1;i>=0;i--)
+	    {
+	        if(v.size()%2==0)
+	        y=(v.size()-1)/2;
+	        else
+	        y=v.size()/2;
+	        med.push_back(v[y]);
+	        v.pop_back();
+	    }
+	     
+	    v.clear();
+	    for(auto x:s)
+	    {
+	        v.push_back(x);
+	    }
+	     long long i=v.size();
+	    while(i--)
+	    {
+	        if(v.size()%2==0)
+	        y=(v.size()-1)/2;
+	        else
+	        y=v.size()/2;
+	        med.push_back(v[y]);
+	        reverse(v.begin(),v.end());
+	        v.pop_back();
+	        reverse(v.begin(),v.end());
+	    }
+	    
+	    sort(med.begin(),med.end());
+	    sort(v1.begin(),v1.end());
+	   
+	    if(v1==med)
+	    {
+	        for(auto x:s)
+	        cout<<x<<" ";
+	        cout<<"\n";
+	    }
+	    else
+	    cout<<"-1\n";
+	}
+	return 0;
+}
