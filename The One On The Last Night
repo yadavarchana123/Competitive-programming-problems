@@ -1,0 +1,28 @@
+https://www.codechef.com/FOUR21C/problems/S06E06
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    string s;
+	    cin>>s;
+	    long long k,res=1;
+	    cin>>k;
+	    sort(s.begin(),s.end());
+	    while(k--)
+	    {
+	       if(s[0]!='9') 
+	       s[0]+=1;
+	       sort(s.begin(),s.end());
+	    }
+	    for(long long i=0;i<s.length();i++)
+	    res*=s[i]-'0';
+	    cout<<res<<"\n";
+	}
+	return 0;
+}
